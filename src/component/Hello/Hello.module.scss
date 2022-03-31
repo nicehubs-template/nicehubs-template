@@ -1,0 +1,9 @@
+.text {
+  color: #222;
+  font-size: 40px;
+  font-weight: bolder;
+}
+
+.text + div {
+  margin: 20px;
+}
