@@ -14,8 +14,8 @@
     "lint": "eslint src --ext .ts,.tsx,.vue,.js,.jsx",
     "lint:fix": "eslint src --ext .ts,.tsx,.vue,.js,.jsx",
     "prettier": "prettier --write src",
-    "style": "stylelint 'src/**/*.{css,less}'",
-    "style:fix": "stylelint --fix 'src/**/*.{css,less}'",
+    "style": "stylelint 'src/**/*.{css,sass}'",
+    "style:fix": "stylelint --fix 'src/**/*.{css,sass}'",
     "prepare": "husky install",
     "test": "vitest"
   },
@@ -56,7 +56,7 @@
     "vue-tsc": "^0.32.1"
   },
   "lint-staged": {
-    "*.{less,css}": [
+    "*.{sass,css}": [
       "pnpm style:fix"
     ],
     "**/*.{ts,tsx,vue,js,jsx}": [
