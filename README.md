@@ -75,6 +75,32 @@
 
 ## 规范
 
+### i18n 使用规范
+
+> Example.vue
+> 
+```html
+<script lang="ts" setup>
+// 全局vue组件引入 useI18n , 无需再次声明
+const { t } = useI18n();
+</script>
+
+<template>
+  <h1> {{ t('hello') }}  </h1>
+</template>
+
+<i18n>
+{
+  "en" : {
+    "hello": "Hello, Vue3",
+  },
+  "zh" : {
+    "hello": "你好，Vue3",
+  }
+}
+</i18n>
+```
+
 ### css module 规范
 
 > Example.module.sass

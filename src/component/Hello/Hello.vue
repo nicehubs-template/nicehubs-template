@@ -1,15 +1,16 @@
-<script lang="tsx" setup>
+<script lang="ts" setup>
 const count = ref(0);
 
 const handleAdd = () => {
   count.value += 1;
 };
+
 const { t } = useI18n();
 </script>
 
 <template>
   <div :class="[style.text, style.textActive]">
-    {{ t('hello') }} aaaaaaaaaaaaaaaaaaa
+    {{ t('hello') }}
   </div>
   <div>{{ t('count') }} ： {{ count }}</div>
   <el-button @click="handleAdd">{{ t('add') }}</el-button>
