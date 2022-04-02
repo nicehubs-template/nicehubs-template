@@ -73,6 +73,29 @@
   pnpm preview
 ```
 
+## 规范
+
+### css module 规范
+
+> Example.module.sass
+```css
+.class-name {
+  color: red;
+}
+```
+> Example.vue
+```html
+<script setup lang='ts'></script>
+
+<template>
+  <span :class="style.className" > Example </span>
+</template>
+
+<style lang='scss' module>
+@import './example.module.scss';
+</style>
+```
+
 ### 代码提交规范
 
 `[feat]: 描述`
@@ -80,6 +103,7 @@
 - 'feat', // 新功能 feature
 - 'fix', // 修复 bug
 - 'docs', // 文档注释
+- 'ui', // UI样式
 - 'style', // 代码格式(不影响代码运行的变动)
 - 'refactor', // 重构(既不增加新功能，也不是修复 bug)
 - 'perf', // 性能优化
