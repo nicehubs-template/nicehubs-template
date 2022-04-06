@@ -1,14 +1,11 @@
 import { createI18n } from 'vue-i18n';
-
-const message = {
-  // golbal
-};
+import messages from '@intlify/vite-plugin-vue-i18n/messages';
 
 const i18n = createI18n({
   legacy: false,
   globalInjection: true,
   locale: 'zh',
-  message,
+  messages,
 });
 
 export default i18n;

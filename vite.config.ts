@@ -31,8 +31,8 @@ export default defineConfig({
     // 国际化
     VueI18n({
       runtimeOnly: true,
-      compositionOnly: true,
-      include: [path.resolve(__dirname, 'src/i18n/**')],
+      compositionOnly: false,
+      include: [path.resolve(__dirname, 'src/i18n/locales/**')],
     }),
   ],
   // 别名相关配置，需与 tsconfig文件 同步

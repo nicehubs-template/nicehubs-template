@@ -9,7 +9,6 @@ const { t } = useI18n();
 </script>
 
 <template>
-  <div :class="[style.text, style.textActive]">{{ t('hello') }}</div>
   <div>{{ t('count') }} ： {{ count }}</div>
   <el-button @click="handleAdd">{{ t('add') }}</el-button>
 </template>
@@ -21,12 +20,10 @@ const { t } = useI18n();
 <i18n>
 {
   "en" : {
-    "hello": "Hello, Nicehubs",
     "count": "Count",
     "add": "ADD"
   },
   "zh" : {
-    "hello": "你好，好家伙！",
     "count": "总数",
     "add": "添加"
   }
