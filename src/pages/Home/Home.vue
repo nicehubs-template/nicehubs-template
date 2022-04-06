@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import Hello from '@/component/Hello/Hello.vue';
+import Hello from '@/components/Hello/Hello.vue';
 </script>
 
 <template>

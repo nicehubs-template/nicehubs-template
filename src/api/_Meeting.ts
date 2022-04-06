@@ -1,4 +1,4 @@
-import BaseHttpClient from '@/util/http';
+import BaseHttpClient from '@/utils/http';
 class MeetingService extends BaseHttpClient {
   public constructor(namespace: string, urlHost: string) {
     super(namespace, urlHost);

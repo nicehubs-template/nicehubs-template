@@ -1,4 +1,4 @@
-import { Meeting } from './../type/Meeting';
+import { Meeting } from '../typings/Meeting';
 import { defineStore } from 'pinia';
 
 interface IMeetingStore {
