@@ -77,8 +77,9 @@
 
 ### i18n 使用规范
 
+#### 组件内Scope i18n
+
 > Example.vue
-> 
 ```html
 <script lang="ts" setup>
 // 全局vue组件引入 useI18n , 无需再次声明
@@ -101,16 +102,61 @@ const { t } = useI18n();
 </i18n>
 ```
 
+#### 使用全局Scope i18n
+
+1. 在[vite.config.ts](./src/vite.config.ts)配置locales目录
+```js
+export default defineConfig({
+  plugins: [
+    VueI18n({
+      runtimeOnly: true,
+      compositionOnly: false,
+      include: [path.resolve(__dirname, 'src/i18n/locales/**')],
+    })
+  ]
+})
+```
+
+2. 添加 [locale](./src/i18n/) 文件
+```json
+// src/i18n/locales/en.json
+{
+  "hello": "Hello, Vue3",
+}
+```
+3. 使用
+```html
+<!-- I18nExample.vue -->
+<script lang="ts" setup>
+import i18n from '@/i18n';
+
+const fnI18n = ref('');
+// 全局 i18n 用法1
+const { t: gt } = useI18n({ useScope: 'global' });
+
+onMounted(() => {
+  // 函数中使用全局Scope i18n
+  fnI18n.value = i18n.global.t('globalHi');
+});
+</script>
+
+<template>
+  <div>全局Scope i18n 用法1：{{ gt('globalHi') }}</div>
+  <div>全局Scope i18n 用法2：{{ $t('globalHi') }}</div>
+  <div>函数中使用全局Scope i18n： {{ fnI18n }}</div>
+</template>
+```
+
 ### css module 规范
 
-> Example.module.sass
 ```css
+/* Example.module.sass */
 .class-name {
   color: red;
 }
 ```
-> Example.vue
 ```html
+<!-- Example.vue -->
 <script setup lang='ts'></script>
 
 <template>

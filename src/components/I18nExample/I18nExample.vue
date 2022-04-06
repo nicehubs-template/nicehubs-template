@@ -8,7 +8,7 @@ const { t } = useI18n();
 const { t: gt } = useI18n({ useScope: 'global' });
 
 onMounted(() => {
-  // JS中使用全局 Scope i18n
+  // 函数中使用全局Scope i18n
   fnI18n.value = i18n.global.t('globalHi');
 });
 </script>
@@ -18,7 +18,7 @@ onMounted(() => {
   <div>组件Scope i18n：{{ t('hi') }}</div>
   <div>全局Scope i18n 用法1：{{ gt('globalHi') }}</div>
   <div>全局Scope i18n 用法2：{{ $t('globalHi') }}</div>
-  <div>函数内 i18n 用法2：{{ fnI18n }}</div>
+  <div>函数中使用全局Scope i18n：{{ fnI18n }}</div>
 </template>
 
 <i18n>
