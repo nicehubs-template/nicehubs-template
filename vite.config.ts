@@ -32,7 +32,7 @@ export default defineConfig({
     VueI18n({
       runtimeOnly: true,
       compositionOnly: true,
-      include: [path.resolve(__dirname, 'i18n/**')],
+      include: [path.resolve(__dirname, 'src/i18n/**')],
     }),
   ],
   // 别名相关配置，需与 tsconfig文件 同步
@@ -49,4 +49,5 @@ export default defineConfig({
   },
   // vitest 相关配置
   test: {},
+  envDir: path.resolve(__dirname, 'src/config'),
 });
